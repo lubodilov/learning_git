@@ -54,7 +54,7 @@ void preprocess(int root) {
     dfs(root, root);
 }
 int main(){
-
+///тук следва въвеждане и тестване
 
 return 0;
 }
