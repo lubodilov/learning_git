@@ -45,7 +45,7 @@ vector<int> restore_path(int s, int t, vector<int> const& p) {
     return path;
 }
 int main() {
-
+/// Тук е въвеждането
 
 
 
