@@ -41,11 +41,11 @@ void update(int curr, int tl, int tr, int index, int val)
         int tmid=(tl+tr)/2;
         if(tmid<index)
         {
-            update(curr*2, tl, tmid, index, val);
+            update(curr*2+1, tmid+1, tr, index, val);
         }
         else
         {
-            update(curr*2+1, tmid+1, tr, index, val);
+            update(curr*2, tl, tmid, index, val);
         }
         t[curr]=t[curr*2]+t[curr*2+1];
     }
@@ -60,8 +60,9 @@ int main(){
     }
     build(arr, 1, 0, n-1);
     cout << sum(1, 0, n-1, 2, 3);
-
+    update(1, 0, n-1, 2, 10);
+    arr[2]=10;
+    cout << "\n" << sum(1, 0, n-1, 2, 3);
 
 return 0;
 }
-
