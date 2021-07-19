@@ -45,8 +45,8 @@ int main() {
     cout << "Sum of elements in arr[0..5] is "
         << get_sum(5, BITree);
 
-    freq[3] += 6;
-    update(3, 6, n, BITree);
+    freq[3] += 7;
+    update(3, 7, n, BITree);
 
     cout << "\nSum of elements in arr[0..5] after update is "
         << get_sum(5, BITree);
