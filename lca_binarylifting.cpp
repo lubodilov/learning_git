@@ -1,24 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<vector<int> >adj;
+vector<int>adj[10000];
 vector<vector<int> >up;
 vector<int> tin, tout;
-int n, l;
+int n, m, l;
 int timer=0;
 void dfs(int v, int p)
 {
     tin[v] = ++timer;
-    up[v][0]=p;
-    for(int i=0; i<=l; ++i)
+    up[v][0] = p;
+    for(int i=1; i<l; ++i)
     {
         up[v][i]=up[up[v][i-1]][i-1];
     }
     for(int u : adj[v])
     {
-        if(u!=p)
-        {
-            dfs(u, v);
-        }
+        if(u!=p){dfs(u, v);}
     }
     tout[v] = ++timer;
 }
@@ -45,17 +42,34 @@ int lca(int u, int v)
     }
     return up[u][0];
 }
-void preprocess(int root) {
+void preprocess() {
     tin.resize(n);
     tout.resize(n);
     timer = 0;
     l = ceil(log2(n));
     up.assign(n, vector<int>(l + 1));
-    dfs(root, root);
 }
 int main(){
-///тук следва въвеждане и тестване
+int a, b;
+cin >> n >> m;
+///adj.assign(m, vector<int>(m));
+for(int i=0; i<m; ++i)
+{
+    cin >> a >> b;
+    adj[a].push_back(b);
+    adj[b].push_back(a);
+}
+preprocess();
+dfs(0, 0);
+cout << lca(3, 5);
 
 return 0;
 }
-
+/**
+6 5
+0 1
+1 2
+1 3
+2 4
+4 5
+**/
