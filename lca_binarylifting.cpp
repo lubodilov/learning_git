@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int>adj[1000];
+vector<int>adj[10000];
 vector<vector<int> >up;
 vector<int> tin, tout;
-int n, l;
+int n, m, l;
 int timer=0;
 void dfs(int v, int p)
 {
@@ -50,7 +50,6 @@ void preprocess() {
     up.assign(n, vector<int>(l + 1));
 }
 int main(){
-int m;
 int a, b;
 cin >> n >> m;
 ///adj.assign(m, vector<int>(m));
