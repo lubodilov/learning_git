@@ -3,8 +3,7 @@
 #include <vector>
 using namespace std;
 const int INF = 1000000000;
-vector<vector<pair<int, int>>> adj;
-
+vector<pair<int, int>> adj[10000];
 void dijkstra(int s, vector<int> & d, vector<int> & p) {
     int n = adj.size();
     d.assign(n, INF);
@@ -46,6 +45,8 @@ vector<int> restore_path(int s, int t, vector<int> const& p) {
 }
 int main() {
 /// Тук е въвеждането
+int n, m;
+
 
 
 
