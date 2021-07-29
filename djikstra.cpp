@@ -10,8 +10,6 @@ void djikstra(int s, vector<int> & d, vector<int> & p) {
     ///int n = adj.size();
     d.assign(n, INF);
     p.assign(n, -1);
-    vector<bool> u(n, false);
-
     d[s] = 0;
     set<pair<int, int>>q;
     q.insert({0, s});
